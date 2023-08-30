@@ -1,0 +1,12 @@
+
+name: Merge PC
+on: [ pull_request ]
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+         os: [ macos-latest, ubuntu-latest, windows-latest ]
+    steps:
+      - uses: actions/checkout@v2
+      - run: python Intro.py
